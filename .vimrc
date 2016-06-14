@@ -11,6 +11,7 @@ call vundle#begin()
 "Plugin 'Shutnik/jshint2.vim'
 "Plugin 'skammer/vim-css-coloor'
 Plugin 'HerringtonDarkholme/yats.vim' " enable typescript highlighting
+Plugin 'JuliaLang/julia-vim' " ew julia
 Plugin 'L9'
 Plugin 'Lokaltog/vim-easymotion' " quick motion
 Plugin 'SirVer/ultisnips' " allow snippets
@@ -246,3 +247,4 @@ if !exists("g:ycm_semantic_triggers")
   let g:ycm_semantic_triggers = {}
 endif
 let g:ycm_semantic_triggers['typescript'] = ['.']
+highlight SyntasticError ctermbg=DarkRed
