@@ -77,7 +77,7 @@ set shiftwidth=4
 set softtabstop=4
 set noexpandtab
 
-autocmd BufNewFile,BufRead *.py
+autocmd BufNewFile,BufRead *.py,*.jl
 	\ set tabstop=4 |
 	\ set softtabstop=4 |
 	\ set shiftwidth=4 |
