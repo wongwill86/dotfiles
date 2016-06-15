@@ -84,8 +84,7 @@ autocmd BufNewFile,BufRead *.py,*.jl
 	\ set textwidth=79 |
 	\ set expandtab |
 	\ set autoindent |
-	\ set fileformat=unix |
-	\ set noexpandtab
+	\ set fileformat=unix
 autocmd BufNewFile,BufRead *.js,*.html,*.css,*.jsx,*.json,*.cpp,*.c,*.hpp,*.h
 	\ set tabstop=2 |
 	\ set softtabstop=2 |
