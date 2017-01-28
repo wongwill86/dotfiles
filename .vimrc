@@ -23,6 +23,7 @@ Plugin 'honza/vim-snippets' " snippets to be used with ultisnips
 Plugin 'jmcantrell/vim-virtualenv' "manages python virtual env
 Plugin 'kien/ctrlp.vim.git'
 Plugin 'mattn/emmet-vim' " super fast html and css blocking
+Plugin 'mileszs/ack.vim' " search
 Plugin 'mxw/vim-jsx' " vim highlighting that depends on pangloss js highlighting for react jsx
 Plugin 'pangloss/vim-javascript' "javascript indentation fix
 Plugin 'rdnetto/YCM-Generator' " autocomplete
@@ -127,7 +128,7 @@ set undolevels=1000
 "highlight whitespace
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
-autocmd filetype html,xml set listchars-=tab:>.
+autocmd filetype html,xml set listchars=tab:>.
 
 " If doing a diff. Upon writing changes to file, automatically update the
 " differences
@@ -156,7 +157,7 @@ map <C-n> :NERDTreeToggle<cr>
 let NERDTreeShowHidden=1
 
 " CtrlP
-nmap <leader>p :CtrlP<cr>
+nmap <leader>p :CtrlPCurWD<cr>
 " Easy bindings for its various modes
 nmap <leader>bb :CtrlPBuffer<cr>
 nmap <leader>bm :CtrlPMixed<cr>
@@ -173,6 +174,7 @@ let g:ycm_autoclose_preview_window_after_insertion=1 "close the stupid window af
 let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
 noremap <F3> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_server_log_level='debug'
+let g:ycm_server_python_interpreter = '/usr/bin/python' " specifying python version so it doesn't crash
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger = '<c-tab>'
@@ -247,3 +249,6 @@ if !exists("g:ycm_semantic_triggers")
 endif
 let g:ycm_semantic_triggers['typescript'] = ['.']
 highlight SyntasticError ctermbg=DarkRed
+
+" ack-grep!
+map <leader>a :Ack<Space>
