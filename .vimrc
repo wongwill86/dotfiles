@@ -128,6 +128,8 @@ set undolevels=1000
 "highlight whitespace
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
+hi NonText ctermfg=8
+hi SpecialKey ctermfg=8
 autocmd filetype html,xml set listchars=tab:>.
 
 " If doing a diff. Upon writing changes to file, automatically update the
