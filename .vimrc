@@ -127,10 +127,12 @@ set undolevels=1000
 
 "highlight whitespace
 set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set listchars=tab:>.,trail:.,extends:#,nbsp:.,space:.
 hi NonText ctermfg=8
 hi SpecialKey ctermfg=8
-autocmd filetype html,xml set listchars=tab:>.
+
+" fix syntax syncing
+autocmd BufEnter * :syntax sync fromstart
 
 " If doing a diff. Upon writing changes to file, automatically update the
 " differences
