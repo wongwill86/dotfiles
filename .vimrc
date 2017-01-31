@@ -176,7 +176,10 @@ let g:ycm_seed_identifiers_with_syntax = 1 " autofill syntax
 let g:ycm_autoclose_preview_window_after_completion=1 "close the stupid window after suggestions
 let g:ycm_autoclose_preview_window_after_insertion=1 "close the stupid window after insert mode
 let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
-noremap <F3> :YcmCompleter GoToDefinitionElseDeclaration<CR>
+noremap <F2> :YcmCompleter GetDoc<CR>
+noremap <F3> :YcmCompleter GoToDefinition<CR>
+noremap <F4> :YcmCompleter GoToReferences<CR>
+noremap <F5> :YcmCompleter GetType<CR>
 let g:ycm_server_log_level='debug'
 let g:ycm_server_python_interpreter = '/usr/bin/python' " specifying python version so it doesn't crash
 
