@@ -133,6 +133,10 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.,space:.
 hi NonText ctermfg=8
 hi SpecialKey ctermfg=8
 
+"search highlight to be a bit more subtle
+hi IncSearch ctermbg=8
+hi Search ctermbg=8
+
 " fix syntax syncing
 autocmd BufEnter * :syntax sync fromstart
 
