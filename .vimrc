@@ -238,6 +238,11 @@ let g:syntastic_cpp_include_dirs = ['/usr/lib/x86_64-linux-gnu']
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_typescript_checkers = ['tsuquyomi']
+" Navigate syntastic errors
+map <leader>e :Errors<CR>
+map <leader>q :lclose<CR>
+map <leader>k :lprevious<CR>
+map <leader>j :lnext<CR>
 
 " Override eslint with local version where necessary.
 let local_eslint = finddir('node_modules', '.;') . '/.bin/eslint'
