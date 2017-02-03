@@ -14,8 +14,10 @@ Plugin 'HerringtonDarkholme/yats.vim' " enable typescript highlighting
 Plugin 'JuliaLang/julia-vim' " ew julia
 Plugin 'L9'
 Plugin 'Lokaltog/vim-easymotion' " quick motion
+Plugin 'Quramy/tsuquyomi' " typescript errors and stuff
+Plugin 'Shougo/vimproc.vim.git' " interactive command exection (for tsuquyomi ts highlighting ( must cd & make )
 Plugin 'SirVer/ultisnips' " allow snippets
-Plugin 'Valloric/YouCompleteMe' "cd ~/.vim/bundle/YouCompleteMe... then ./install.py --clang-completer
+Plugin 'Valloric/YouCompleteMe' "cd ~/.vim/bundle/YouCompleteMe... then ./install.py --clang-completer --tern-completer
 Plugin 'VundleVim/Vundle.vim' "duh plugins
 Plugin 'bling/vim-airline' "configures the bottom line
 Plugin 'ervandew/supertab' " mainly to make ultisnips and ycm compatible with each other
@@ -235,6 +237,7 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:syntastic_cpp_include_dirs = ['/usr/lib/x86_64-linux-gnu']
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['tsuquyomi']
 
 " Override eslint with local version where necessary.
 let local_eslint = finddir('node_modules', '.;') . '/.bin/eslint'
@@ -259,3 +262,6 @@ highlight SyntasticError ctermbg=DarkRed
 
 " ack-grep!
 map <leader>a :Ack<Space>
+
+" tsuquyomi
+let g:tsuquyomi_disable_quickfix = 1
