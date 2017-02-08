@@ -174,6 +174,7 @@ nmap <leader>bm :CtrlPMixed<cr>
 " nmap <leader>bs :CtrlPMRU<cr>
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_extensions = ['buffertag', 'tag', 'dir']
+let g:ctrlp_follow_symlinks=1
 
 " YouCompleteMe
 let g:ycm_key_list_select_completion = ['<tab>', '<Down>'] "remap ycm for ultisnips
