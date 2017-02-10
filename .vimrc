@@ -19,6 +19,7 @@ Plugin 'Shougo/vimproc.vim.git' " interactive command exection (for tsuquyomi ts
 Plugin 'SirVer/ultisnips' " allow snippets
 Plugin 'Valloric/YouCompleteMe' "cd ~/.vim/bundle/YouCompleteMe... then ./install.py --clang-completer --tern-completer
 Plugin 'VundleVim/Vundle.vim' "duh plugins
+Plugin 'beyondmarc/glsl.vim' " glsl shading
 Plugin 'bling/vim-airline' "configures the bottom line
 Plugin 'ervandew/supertab' " mainly to make ultisnips and ycm compatible with each other
 Plugin 'honza/vim-snippets' " snippets to be used with ultisnips
