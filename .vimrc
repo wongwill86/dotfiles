@@ -168,7 +168,7 @@ map <C-n> :NERDTreeToggle<cr>
 "autocmd bufenter * if (winnr("$") && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeShowHidden=1
 " don't show swp files in nerdtree
-let NERDTreeIgnore = ['\.swp$']
+let NERDTreeIgnore = ['\.swp$', '\.swo$']
 
 " CtrlP
 nmap <leader>p :CtrlPCurWD<cr>
@@ -182,7 +182,7 @@ let g:ctrlp_follow_symlinks=1
 " ignore node_modules and jspm in ctrlp
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](node_modules|jspm_packages)|(\.(git|hg|svn))$',
-  \ 'file': '\v\.(exe|so|dll|swp)$',
+  \ 'file': '\v\.(exe|so|dll|swp|swo)$',
   \ }
 
 " YouCompleteMe
