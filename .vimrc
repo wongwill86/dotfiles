@@ -33,6 +33,7 @@ Plugin 'rdnetto/YCM-Generator' " autocomplete
 Plugin 'scrooloose/nerdcommenter' " quick commenting
 Plugin 'scrooloose/nerdtree' " file viewer
 Plugin 'scrooloose/syntastic.git' " syntax checker
+Plugin 'thinca/vim-localrc' " local project rc
 Plugin 'tpope/vim-fugitive' " git integration
 Plugin 'tpope/vim-surround' " fast wrapping surrounding things like quotes and parens
 
@@ -89,7 +90,7 @@ autocmd BufNewFile,BufRead *.py,*.jl
 	\ set expandtab |
 	\ set autoindent |
 	\ set fileformat=unix
-autocmd BufNewFile,BufRead *.ts,*.js,*.html,*.css,*.jsx,*.json,*.cpp,*.c,*.hpp,*.h
+autocmd BufNewFile,BufRead *.ts,*.js,*.html,*.css,*.tsx,*.jsx,*.json,*.cpp,*.c,*.hpp,*.h
 	\ set tabstop=2 |
 	\ set softtabstop=2 |
 	\ set shiftwidth=2 |
@@ -166,6 +167,8 @@ map <C-n> :NERDTreeToggle<cr>
 "close vim if only nerdtree is open! doesn't seem to work with toggle
 "autocmd bufenter * if (winnr("$") && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeShowHidden=1
+" don't show swp files in nerdtree
+let NERDTreeIgnore = ['\.swp$']
 
 " CtrlP
 nmap <leader>p :CtrlPCurWD<cr>
@@ -176,6 +179,11 @@ nmap <leader>bm :CtrlPMixed<cr>
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_extensions = ['buffertag', 'tag', 'dir']
 let g:ctrlp_follow_symlinks=1
+" ignore node_modules and jspm in ctrlp
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](node_modules|jspm_packages)|(\.(git|hg|svn))$',
+  \ 'file': '\v\.(exe|so|dll|swp)$',
+  \ }
 
 " YouCompleteMe
 let g:ycm_key_list_select_completion = ['<tab>', '<Down>'] "remap ycm for ultisnips
