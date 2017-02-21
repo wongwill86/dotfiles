@@ -170,6 +170,15 @@ let NERDTreeShowHidden=1
 " don't show swp files in nerdtree
 let NERDTreeIgnore = ['\.swp$', '\.swo$']
 
+" Including this code i can put in .local.vimrc to ignore patterns in folders
+" let's ignore all the generated js files!
+"let g:SrcJSRegex = '\(src\/.*\.js\)$'
+"function! SrcJSFilter(params)
+"	return substitute(a:params['path'].str(), 
+"				\ a:params['nerdtree'].root.path.str(), '', 'g') =~ g:SrcJSRegex
+"endfunction
+"call NERDTreeAddPathFilter('SrcJSFilter')
+
 " CtrlP
 nmap <leader>p :CtrlPCurWD<cr>
 " Easy bindings for its various modes

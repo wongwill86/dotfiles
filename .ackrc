@@ -1,0 +1,9 @@
+--sort-files
+
+--type-set=minifiedjs:ext:min.js
+--nominifiedjs
+
+--ignore-file=match:.gitignore
+
+# vi/vim swap files
+--ignore-file=match:/[._].*\.swp$/
