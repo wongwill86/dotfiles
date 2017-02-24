@@ -21,6 +21,7 @@ Plugin 'Valloric/YouCompleteMe' "cd ~/.vim/bundle/YouCompleteMe... then ./instal
 Plugin 'VundleVim/Vundle.vim' "duh plugins
 Plugin 'beyondmarc/glsl.vim' " glsl shading
 Plugin 'bling/vim-airline' "configures the bottom line
+Plugin 'editorconfig/editorconfig-vim' " xplatform style config
 Plugin 'ervandew/supertab' " mainly to make ultisnips and ycm compatible with each other
 Plugin 'honza/vim-snippets' " snippets to be used with ultisnips
 Plugin 'jmcantrell/vim-virtualenv' "manages python virtual env
