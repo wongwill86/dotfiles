@@ -206,7 +206,7 @@ noremap <F2> :YcmCompleter GetDoc<CR>
 noremap <F3> :YcmCompleter GoToDefinition<CR>
 noremap <F4> :YcmCompleter GoToReferences<CR>
 noremap <F5> :YcmCompleter GetType<CR>
-let g:ycm_server_log_level='debug'
+let g:ycm_server_log_level='warn'
 let g:ycm_server_python_interpreter = '/usr/bin/python' " specifying python version so it doesn't crash
 
 " UltiSnips
@@ -261,7 +261,7 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:syntastic_cpp_include_dirs = ['/usr/lib/x86_64-linux-gnu']
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_typescript_checkers = ['tsuquyomi']
+let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
 " Navigate syntastic errors
 map <leader>e :Errors<CR>
 map <leader>q :lclose<CR>
