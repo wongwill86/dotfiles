@@ -24,12 +24,12 @@ Plugin 'bling/vim-airline' "configures the bottom line
 Plugin 'editorconfig/editorconfig-vim' " xplatform style config
 Plugin 'ervandew/supertab' " mainly to make ultisnips and ycm compatible with each other
 Plugin 'honza/vim-snippets' " snippets to be used with ultisnips
-Plugin 'jmcantrell/vim-virtualenv' "manages python virtual env
 Plugin 'kien/ctrlp.vim.git'
 Plugin 'mattn/emmet-vim' " super fast html and css blocking
 Plugin 'mileszs/ack.vim' " search
 Plugin 'mxw/vim-jsx' " vim highlighting that depends on pangloss js highlighting for react jsx
 Plugin 'pangloss/vim-javascript' "javascript indentation fix
+Plugin 'python-mode/python-mode' " python mode
 Plugin 'rdnetto/YCM-Generator' " autocomplete
 Plugin 'scrooloose/nerdcommenter' " quick commenting
 Plugin 'scrooloose/nerdtree' " file viewer
@@ -294,3 +294,6 @@ map <leader>a :Ack<Space>
 
 " tsuquyomi
 let g:tsuquyomi_disable_quickfix = 1
+
+"python mode
+let g:pymode_rope_completion = 0 " Disable rope since YouCompleteMe has Jedi already
