@@ -23,6 +23,7 @@ Plugin 'beyondmarc/glsl.vim' " glsl shading
 Plugin 'bling/vim-airline' "configures the bottom line
 Plugin 'editorconfig/editorconfig-vim' " xplatform style config
 Plugin 'ervandew/supertab' " mainly to make ultisnips and ycm compatible with each other
+Plugin 'fatih/vim-go' " golang duh
 Plugin 'honza/vim-snippets' " snippets to be used with ultisnips
 Plugin 'kien/ctrlp.vim.git'
 Plugin 'mattn/emmet-vim' " super fast html and css blocking
@@ -96,6 +97,9 @@ autocmd BufNewFile,BufRead *.ts,*.js,*.html,*.css,*.tsx,*.jsx,*.json,*.cpp,*.c,*
 	\ set softtabstop=2 |
 	\ set shiftwidth=2 |
 	\ set expandtab
+
+autocmd BufNewFile,BufRead *.py
+	\ nnoremap <buffer> <F8> :exec '!python' shellescape(@%, 1)<cr>
 
 " Search settings
 set showmatch
