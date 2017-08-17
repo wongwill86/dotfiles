@@ -38,6 +38,7 @@ Plugin 'scrooloose/syntastic.git' " syntax checker
 Plugin 'thinca/vim-localrc' " local project rc
 Plugin 'tpope/vim-fugitive' " git integration
 Plugin 'tpope/vim-surround' " fast wrapping surrounding things like quotes and parens
+Plugin 'wesQ3/vim-windowswap.git' " <leader>ww to yank and swap splits!
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
