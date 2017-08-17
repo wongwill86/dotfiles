@@ -153,6 +153,7 @@ autocmd BufWritePost * if &diff == 1 | diffupdate | endif
 
 " show wdith of 80
 set cc=80
+
 "--------------------------- PLUGIN CUSTOMIZATION ---------------------------
 
 " On file types...
@@ -173,7 +174,7 @@ map <C-n> :NERDTreeToggle<cr>
 "autocmd bufenter * if (winnr("$") && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeShowHidden=1
 " don't show swp files in nerdtree
-let NERDTreeIgnore = ['\.swp$', '\.swo$']
+let NERDTreeIgnore = ['\.swp$', '\.swo$', '\.pyc$']
 
 " Including this code i can put in .local.vimrc to ignore patterns in folders
 " let's ignore all the generated js files!
@@ -196,7 +197,7 @@ let g:ctrlp_follow_symlinks=1
 " ignore node_modules and jspm in ctrlp
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](node_modules|jspm_packages)|(\.(git|hg|svn))$',
-  \ 'file': '\v\.(exe|so|dll|swp|swo)$',
+  \ 'file': '\v\.(exe|so|dll|swp|swo|pyc)$',
   \ }
 
 " YouCompleteMe
