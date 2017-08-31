@@ -20,7 +20,7 @@ Plugin 'SirVer/ultisnips' " allow snippets
 Plugin 'Valloric/YouCompleteMe' "cd ~/.vim/bundle/YouCompleteMe... then ./install.py --clang-completer --tern-completer
 Plugin 'VundleVim/Vundle.vim' "duh plugins
 Plugin 'beyondmarc/glsl.vim' " glsl shading
-Plugin 'bling/vim-airline' "configures the bottom line
+Plugin 'bling/vim-airline' "configures the bottom line install fonts! https://github.com/powerline/fonts#quick-installation
 Plugin 'editorconfig/editorconfig-vim' " xplatform style config
 Plugin 'ervandew/supertab' " mainly to make ultisnips and ycm compatible with each other
 Plugin 'fatih/vim-go' " golang duh
@@ -260,6 +260,7 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled=1 "enable tab to show oppen buffers
 let g:airline#extensions#tabline#left_sep = '>'
 let g:airline#extensions#tabline#left_alt_sep = '>'
+let g:airline_powerline_fonts = 1
 
 " Syntastic
 let g:syntastic_cpp_compiler = 'g++'
