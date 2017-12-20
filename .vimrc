@@ -31,6 +31,7 @@ Plugin 'honza/vim-snippets' " snippets to be used with ultisnips
 Plugin 'junegunn/fzf'  " need to go to cd ~/.vim/bundle/fzf ... then ./install --all
 Plugin 'junegunn/fzf.vim'
 Plugin 'kien/ctrlp.vim.git'
+Plugin 'majutsushi/tagbar' " tags in airline bar?
 Plugin 'mattn/emmet-vim' " super fast html and css blocking
 Plugin 'mileszs/ack.vim' " search
 Plugin 'mxw/vim-jsx' " vim highlighting that depends on pangloss js highlighting for react jsx
@@ -44,6 +45,7 @@ Plugin 'thinca/vim-localrc' " local project rc
 Plugin 'tmhedberg/SimpylFold' " use this instead of pymode folding
 Plugin 'tpope/vim-fugitive' " git integration
 Plugin 'tpope/vim-surround' " fast wrapping surrounding things like quotes and parens
+Plugin 'universal-ctags/ctags' " cd into directory ./autogen.sh; ./configure; make; make install
 Plugin 'wesQ3/vim-windowswap.git' " <leader>ww to yank and swap splits!
 
 " All of your Plugins must be added before the following line
@@ -239,14 +241,23 @@ command! -bang Colors
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \   <bang>0 ? fzf#vim#with_preview('right:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
 " Likewise, Files command with preview window
 command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-nmap <leader>t :Files<cr>
-nmap <leader>s :Rg<cr>
+  \ call fzf#vim#files(<q-args>,
+  \   <bang>0 ? fzf#vim#with_preview('right:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+" --files: List files that would be searched but do not search
+" --no-ignore: Do not respect .gitignore, etc...
+" --hidden: Search hidden files and folders
+" --follow: Follow symlinks
+" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob "!.git/*"'
+nmap <leader>t :Files!<cr>
+nmap <leader>s :Rg!<cr>
 
 
 " CtrlP
@@ -323,6 +334,7 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled=1 "enable tab to show oppen buffers
 let g:airline#extensions#tabline#left_sep = '>'
 let g:airline#extensions#tabline#left_alt_sep = '>'
+let g:airline#extensions#tagbar#flags = 'f'
 let g:airline_powerline_fonts = 1
 
 " Syntastic
