@@ -14,6 +14,7 @@ call vundle#begin()
 "Plugin 'skammer/vim-css-coloor'
 Plugin 'HerringtonDarkholme/yats.vim' " enable typescript highlighting
 Plugin 'JuliaLang/julia-vim' " ew julia
+Plugin 'Konfekt/FastFold' " faster folding!
 Plugin 'L9'
 Plugin 'Lokaltog/vim-easymotion' " quick motion
 Plugin 'Quramy/tsuquyomi' " typescript errors and stuff
@@ -40,6 +41,7 @@ Plugin 'scrooloose/nerdcommenter' " quick commenting
 Plugin 'scrooloose/nerdtree' " file viewer
 Plugin 'scrooloose/syntastic.git' " syntax checker
 Plugin 'thinca/vim-localrc' " local project rc
+Plugin 'tmhedberg/SimpylFold' " use this instead of pymode folding
 Plugin 'tpope/vim-fugitive' " git integration
 Plugin 'tpope/vim-surround' " fast wrapping surrounding things like quotes and parens
 Plugin 'wesQ3/vim-windowswap.git' " <leader>ww to yank and swap splits!
@@ -258,7 +260,7 @@ let g:ctrlp_extensions = ['buffertag', 'tag', 'dir']
 let g:ctrlp_follow_symlinks=1
 " ignore node_modules and jspm in ctrlp
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](node_modules|jspm_packages)|(\.(git|hg|svn))$',
+  \ 'dir':  '\v[\/](node_modules|jspm_packages)|(\.(git|hg|svn|tox|ropeproject))$',
   \ 'file': '\v\.(exe|so|dll|swp|swo|pyc)$',
   \ }
 
@@ -363,5 +365,12 @@ map <leader>a :Ack<Space>
 " tsuquyomi
 let g:tsuquyomi_disable_quickfix = 1
 
-"python mode
+" python mode
 let g:pymode_rope_completion = 0 " Disable rope since YouCompleteMe has Jedi already
+let g:pymode_folding = 0 " disable pymode folding because it is too slow
+
+" Fast folding 
+nmap zuz <Plug>(FastFoldUpdate)
+let g:fastfold_savehook = 1
+let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
+let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
