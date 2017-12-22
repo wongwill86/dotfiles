@@ -20,7 +20,7 @@ Plugin 'Lokaltog/vim-easymotion' " quick motion
 Plugin 'Quramy/tsuquyomi' " typescript errors and stuff
 Plugin 'Shougo/vimproc.vim.git' " interactive command exection (for tsuquyomi ts highlighting ( must cd & make )
 Plugin 'SirVer/ultisnips' " allow snippets
-Plugin 'Valloric/YouCompleteMe' "cd ~/.vim/bundle/YouCompleteMe... then ./install.py --clang-completer --tern-completer
+Plugin 'Valloric/YouCompleteMe' "cd ~/.vim/bundle/YouCompleteMe... then ./install.py --clang-completer --js-completer
 Plugin 'VundleVim/Vundle.vim' "duh plugins
 Plugin 'beyondmarc/glsl.vim' " glsl shading
 Plugin 'bling/vim-airline' "configures the bottom line install fonts! https://github.com/powerline/fonts#quick-installation
