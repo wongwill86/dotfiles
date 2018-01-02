@@ -378,7 +378,14 @@ map <leader>a :Ack<Space>
 let g:tsuquyomi_disable_quickfix = 1
 
 " python mode
-let g:pymode_rope_completion = 0 " Disable rope since YouCompleteMe has Jedi already
+"" Disable rope since YouCompleteMe has Jedi already
+let g:pymode_rope_completion = 0 
+let g:pymode_rope_regenerate_on_write = 0
+let g:pymode_rope_lookup_project= 0
+let g:pymode_rope_complete_on_dot = 0
+" syntastic has python setup already
+let g:pymode_lint = 0 
+let g:pymode_lint_on_write = 0
 let g:pymode_folding = 0 " disable pymode folding because it is too slow
 
 " Fast folding 
