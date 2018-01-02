@@ -337,6 +337,9 @@ let g:airline#extensions#tabline#left_alt_sep = '>'
 let g:airline#extensions#tagbar#flags = 'f'
 let g:airline_powerline_fonts = 1
 
+" Tagbar
+nnoremap <silent> <F10> :TagbarToggle<CR>
+
 " Syntastic
 let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
