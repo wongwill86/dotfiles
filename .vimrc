@@ -92,12 +92,12 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set noexpandtab
+set textwidth=120
 
 autocmd BufNewFile,BufRead *.py,*.jl
 	\ set tabstop=4 |
 	\ set softtabstop=4 |
 	\ set shiftwidth=4 |
-	\ set textwidth=79 |
 	\ set expandtab |
 	\ set autoindent |
 	\ set fileformat=unix
