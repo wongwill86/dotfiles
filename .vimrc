@@ -18,17 +18,17 @@ Plugin 'Konfekt/FastFold' " faster folding!
 Plugin 'L9'
 Plugin 'Lokaltog/vim-easymotion' " quick motion
 Plugin 'Quramy/tsuquyomi' " typescript errors and stuff
-Plugin 'Shougo/vimproc.vim.git' " interactive command exection (for tsuquyomi ts highlighting ( must cd & make )
+Plugin 'Shougo/vimproc.vim.git' "  INSTALL: interactive command exection (for tsuquyomi ts highlighting ( must cd & make )
 Plugin 'SirVer/ultisnips' " allow snippets
-Plugin 'Valloric/YouCompleteMe' "cd ~/.vim/bundle/YouCompleteMe... then ./install.py --clang-completer --js-completer
-Plugin 'VundleVim/Vundle.vim' "duh plugins
+Plugin 'Valloric/YouCompleteMe' " INSTALL: cd ~/.vim/bundle/YouCompleteMe... then ./install.py --clang-completer --js-completer
+Plugin 'VundleVim/Vundle.vim' " duh plugins
 Plugin 'beyondmarc/glsl.vim' " glsl shading
-Plugin 'bling/vim-airline' "configures the bottom line install fonts! https://github.com/powerline/fonts#quick-installation
+Plugin 'bling/vim-airline' " INSTALL: configures the bottom line install fonts! https://github.com/powerline/fonts#quick-installation
 Plugin 'editorconfig/editorconfig-vim' " xplatform style config
 Plugin 'ervandew/supertab' " mainly to make ultisnips and ycm compatible with each other
 Plugin 'fatih/vim-go' " golang duh
 Plugin 'honza/vim-snippets' " snippets to be used with ultisnips
-Plugin 'junegunn/fzf'  " need to go to cd ~/.vim/bundle/fzf ... then ./install --all
+Plugin 'junegunn/fzf'  "  INSTALL: need to go to cd ~/.vim/bundle/fzf ... then ./install --all
 Plugin 'junegunn/fzf.vim'
 Plugin 'kien/ctrlp.vim.git'
 Plugin 'majutsushi/tagbar' " tags in airline bar?
@@ -40,12 +40,12 @@ Plugin 'python-mode/python-mode' " python mode
 Plugin 'rdnetto/YCM-Generator' " autocomplete
 Plugin 'scrooloose/nerdcommenter' " quick commenting
 Plugin 'scrooloose/nerdtree' " file viewer
-Plugin 'scrooloose/syntastic.git' " syntax checker
+Plugin 'scrooloose/syntastic.git' " INSTALL: syntax checker. pip install pylama
 Plugin 'thinca/vim-localrc' " local project rc
 Plugin 'tmhedberg/SimpylFold' " use this instead of pymode folding
 Plugin 'tpope/vim-fugitive' " git integration
 Plugin 'tpope/vim-surround' " fast wrapping surrounding things like quotes and parens
-Plugin 'universal-ctags/ctags' " cd into directory ./autogen.sh; ./configure; make; make install
+Plugin 'universal-ctags/ctags' "  INSTALL: cd into directory ./autogen.sh; ./configure; make; make install
 Plugin 'wesQ3/vim-windowswap.git' " <leader>ww to yank and swap splits!
 
 " All of your Plugins must be added before the following line
@@ -160,8 +160,8 @@ autocmd BufEnter * :syntax sync fromstart
 " differences
 autocmd BufWritePost * if &diff == 1 | diffupdate | endif
 
-" show wdith of 80
-set cc=80
+" show width of 120. FOR PYTHON make sure pylama is set
+autocmd FileType * set colorcolumn=120
 
 "--------------------------- PLUGIN CUSTOMIZATION ---------------------------
 
@@ -347,6 +347,7 @@ let g:syntastic_cpp_include_dirs = ['/usr/lib/x86_64-linux-gnu']
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
+let g:syntastic_python_checkers = ['pylama']
 " Navigate syntastic errors
 map <leader>e :Errors<CR>
 map <leader>q :lclose<CR>
