@@ -20,7 +20,7 @@ flags = [
     '-I',
     '.',
     '-isystem',
-    '/usr/include/python2.7'
+    '/usr/include/python3.6'
 ]
 
 if compilation_database_folder:

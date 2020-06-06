@@ -26,6 +26,7 @@ Plugin 'beyondmarc/glsl.vim' " glsl shading
 Plugin 'bling/vim-airline' " INSTALL: configures the bottom line install fonts! https://github.com/powerline/fonts#quick-installation
 Plugin 'editorconfig/editorconfig-vim' " xplatform style config
 Plugin 'ervandew/supertab' " mainly to make ultisnips and ycm compatible with each other
+Plugin 'evanleck/vim-svelte'
 Plugin 'fatih/vim-go' " golang duh
 Plugin 'honza/vim-snippets' " snippets to be used with ultisnips
 Plugin 'junegunn/fzf'  "  INSTALL: need to go to cd ~/.vim/bundle/fzf ... then ./install --all
@@ -101,7 +102,7 @@ autocmd BufNewFile,BufRead *.py,*.jl
 	\ set expandtab |
 	\ set autoindent |
 	\ set fileformat=unix
-autocmd BufNewFile,BufRead *.ts,*.js,*.html,*.css,*.tsx,*.jsx,*.json,*.cpp,*.c,*.hpp,*.h
+autocmd BufNewFile,BufRead *.ts,*.js,*.html,*.css,*.tsx,*.jsx,*.json,*.cpp,*.c,*.hpp,*.h,*.svelte
 	\ set tabstop=2 |
 	\ set softtabstop=2 |
 	\ set shiftwidth=2 |
@@ -287,7 +288,7 @@ noremap <F3> :YcmCompleter GoToDefinition<CR>
 noremap <F4> :YcmCompleter GoToReferences<CR>
 noremap <F5> :YcmCompleter GetType<CR>
 let g:ycm_server_log_level='warn'
-let g:ycm_server_python_interpreter = '/usr/bin/python' " specifying python version so it doesn't crash
+let g:ycm_server_python_interpreter = '/usr/bin/python3' " specifying python version so it doesn't crash
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger = '<c-tab>'
